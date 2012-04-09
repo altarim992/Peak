@@ -8,6 +8,7 @@ from pygame import Rect, Surface
 from pygame.locals import *
 from pygame.sprite import Sprite, Group
 
+<<<<<<< HEAD
 import dumbmenu as dm
 
 PC_HP = 50
@@ -41,6 +42,11 @@ def battle(font, text, pHP, wHP, pSTR, aSTR, wSTR):
         text = font.render("You killed the Wolf!", True, (0,0,0))
         pygame.display.update()
         return wolf_alive
+=======
+from vs1 import Wolf,PC
+
+import dumbmenu as dm
+>>>>>>> ccc6ebb6dd865b9383b6d1868a613f5c14c9a985
 
 class Game(object):
     def __init__(self):
@@ -51,10 +57,15 @@ class Game(object):
         self.enemy = pygame.image.load("wolf2.png").convert()
         self.menu = pygame.Rect((450, 375), (350, 325))
         self.textbox = pygame.Rect((0, 375), (450, 325))
+<<<<<<< HEAD
         self.font = pygame.font.Font(None, 32)
         self.fps = 30
 
     def run(self):
+=======
+        self.fps = 30
+
+>>>>>>> ccc6ebb6dd865b9383b6d1868a613f5c14c9a985
         clock = pygame.time.Clock()
         done = False
         while not done:
@@ -72,6 +83,7 @@ class Game(object):
             self.screen.blit(self.enemy, (500, 125))
             pygame.draw.rect(self.screen, (255,255,255), self.menu)
             pygame.draw.rect(self.screen, (0,0,0), self.menu, 5)
+<<<<<<< HEAD
             pygame.draw.rect(self.screen, (255,255,255),   self.textbox)
             pygame.draw.rect(self.screen, (0,0,0), self.textbox, 5)
             pcHealth = self.font.render("HP: " + str(PC_HP), True, (0,0,0))
@@ -99,8 +111,24 @@ class Game(object):
                 text = self.font.render("You got away!", True, (0,0,0))
                 pygame.display.update()
                 done = True
+=======
+            pygame.draw.rect(self.screen, (255,255,255), self.textbox)
+            pygame.draw.rect(self.screen, (0,0,0), self.textbox, 5)
+
+# Menu - Kind of buggy. ESC has to be pressed to make the other images display, and won't quit without ctrl+c in terminal. Needs fixing.
+            choose = dm.dumbmenu(self.screen, [
+                                "Fight",
+                                "Inventory",
+                                "Run"], 500, 400, None, 48, 1.4, (0,0,0), (0,0,0), False)
+
+            pygame.display.flip()
+>>>>>>> ccc6ebb6dd865b9383b6d1868a613f5c14c9a985
 
 if __name__ == "__main__":
     pygame.init()
     game = Game()
+<<<<<<< HEAD
     game.run()
+=======
+    game.__init__()
+>>>>>>> ccc6ebb6dd865b9383b6d1868a613f5c14c9a985
