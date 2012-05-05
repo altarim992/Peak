@@ -173,19 +173,7 @@ def dumbmenu(screen, menu, x_pos = 100, y_pos = 100, font = None,
 		if exitMenu == True:
 			break
 		for event in pygame.event.get():
-<<<<<<< HEAD
 			if event.type == pygame.KEYDOWN:
-=======
-			if event.type == pygame.QUIT:
-				return -1
-			if event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_ESCAPE and exitAllowed == True:
-					if cursorpos == len(menu) - 1:
-						exitMenu = True
-					else:
-						cursorpos = len(menu) - 1; ArrowPressed = True
-
->>>>>>> ccc6ebb6dd865b9383b6d1868a613f5c14c9a985
 
 				# This Section is huge and ugly, I know... But I don't
 				# know a better method for this^^
